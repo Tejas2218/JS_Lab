@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .alldiv{
+        height: 50px;
+        width: 50px;
+    }
+</style>
+<body>
+    
+        <div class="alldiv"></div>
+        <div class="alldiv"></div>
+        <div class="alldiv"></div>
+        <div class="alldiv"></div>
+        <div class="alldiv"></div>
+        <div class="alldiv"></div>
+        <div class="alldiv"></div>
+        <div class="alldiv"></div>
+        <div class="alldiv"></div>
+        <div class="alldiv"></div>
+        <div class="alldiv"></div>
+        <div class="alldiv"></div>
+    <script>
+        let div = document.querySelectorAll(".alldiv")
+        const arr = [
+            "red",
+            "blue",
+            "green",
+            "purple",
+            "orange",
+            "teal",
+            "cyan",
+            "magenta",
+            "yellow",
+            "lime",
+            "indigo",
+            "brown"
+        ];
+        let ran = Math.floor(Math.random()*arr.length)
+        for (let i = ran; i < 12; i++) {
+            let color = arr[i]
+            div[i].style.backgroundColor = arr[color];
+            if(i==11){
+                i=0
+            }
+            if(i==ran-1){
+                break
+            }
+        }
+    </script>
+</body>
+
+</html>

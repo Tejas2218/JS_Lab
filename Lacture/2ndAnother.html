@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sqr{
+            height: 150px;
+            width: 150px;
+            
+        }
+        .div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 500px;
+            margin: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div"></div>
+    <script>
+        let getdiv = document.getElementsByClassName("div")[0]
+        for(let i=0; i<12; i++){
+            let demo = document.createElement("div")
+            demo.className = "sqr"
+            demo.style.backgroundColor = randomColor()
+            getdiv.appendChild(demo)
+        }
+        function randomColor(){
+            let ltrs = "ABCDEFf0123456789"
+            let finalColor = "#"
+            for(let i=0; i<6; i++){
+                finalColor += ltrs[Math.floor(Math.random()*16)]
+            }
+            return finalColor
+        }
+    </script>
+</body>
+</html>

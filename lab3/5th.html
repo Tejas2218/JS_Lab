@@ -1,4 +1,3 @@
-<!--shift->, unshift->, push->add at last, pop->remove at last-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,29 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="number" id="num"/>
-    <button id="add">add</button><br>
-    <button id="show">show</button><br>
-    <label id="lbl"></label>
     <script>
-        let input = document.getElementById("num")
-        let add = document.getElementById("add")
-        let show = document.getElementById("show")
-        let lbl = document.getElementById("lbl")
-        let arr=[]
-        // console.log(input)
-        add.addEventListener("click", () => {
-            arr.push(input.value)
-            console.log(arr)
-            // arr.forEach((e)=>document.write(`<br> arr is ${e}`))
-        })
-        remove.addEventListener("click", () => {
-            arr.pop(input.value)
-            console.log(arr)
-            // arr.forEach((e)=>document.write(`<br> arr is ${e}`))
-        })
-        
-        
+        let arr = [1132,54,56,34,54,67,44,6,78,3,5,66,7]
+        let sortArr = arr.sort()
+        document.write(sortArr)
+        console.log(arr[0])
     </script>
 </body>
 </html>

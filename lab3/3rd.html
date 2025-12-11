@@ -8,6 +8,15 @@
 <body>
     <script>
         let n = prompt("enter n:")
+        let temp=""
+        for(let i=n.length-1; i>=0; i--){
+            temp+=n[i]
+        }
+        if(temp===n){
+            document.write(`org. is ${n} and reverce is ${temp}, <br> number is pelindrom`)
+        }else{
+            document.write(`org. is ${n} and reverce is ${temp}, <br> number is not a pelindrom`)
+        }
         document.write(`length of ${n} is ${n.split(" ").length}, <br>`)
     </script>
 </body>

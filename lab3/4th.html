@@ -1,0 +1,33 @@
+<!--shift->, unshift->, push->add at last, pop->remove at last-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="num"/>
+    <button id="add">add</button>&nbsp;&nbsp;
+    <button id="remove">remove</button>
+    <script>
+        let input = document.getElementById("num")
+        let add = document.getElementById("add")
+        let remove = document.getElementById("remove")
+        let arr=[]
+        // console.log(input)
+        add.addEventListener("click", () => {
+            arr.push(input.value)
+            console.log(arr)
+            // arr.forEach((e)=>document.write(`<br> arr is ${e}`))
+        })
+        remove.addEventListener("click", () => {
+            arr.pop(input.value)
+            console.log(arr)
+            // arr.forEach((e)=>document.write(`<br> arr is ${e}`))
+        })
+        
+        
+    </script>
+</body>
+</html>

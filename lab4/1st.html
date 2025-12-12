@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="pr">my name is tejas pithva. i'm studing in darshan universit<br></p>
+    <button id="btn">btn</button>
+    <script>
+        let p = document.getElementById("pr")
+        let btn = document.getElementById("btn")
+        btn.addEventListener("click", () => {
+            p.innerHTML = "hey, how are you? what's going on?"
+            p.style.backgroundColor = "orange"
+        })
+    </script>
+</body>
+</html>

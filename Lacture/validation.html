@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="ph" placeholder="Phone"><br>
+    <input type="button" onclick="button()" value="btn"><br>
+    <p id="ans"></p>
+    <script>
+        function button() {
+            let txt = document.getElementById("ph").value;
+            let ptn1 = "/^[0-9]{11}$/"
+            if(ptn1.test(txt)){
+                document.getElementById("ans").innerHTML="done";
+            }
+            else{
+                document.getElementById("ans").innerHTML="wrong";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

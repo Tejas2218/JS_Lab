@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="email" placeholder="Email"><br>
+    <input type="button" onclick="button()" value="btn"><br>
+    <p id="ans">abc</p>
+    <script>
+        function button() {
+            let txt = document.getElementById("email").value;
+            let ptn1 = /^[a-zA-Z0-9._]+@[a-zA-Z]+(\.[a-zA-Z]{2,})+$/
+            if(ptn1.test(txt)){
+                
+                document.getElementById("ans").innerHTML="done";
+            }
+            else{
+                document.getElementById("ans").innerHTML="wrong";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

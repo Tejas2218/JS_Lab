@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="pass" placeholder="pass"><br>
+    <input type="button" onclick="button()" value="btn"><br>
+    <p id="ans">abc</p>
+    <script>
+        function button() {
+            let txt = document.getElementById("pass").value;
+            // let ptn1 = /^[a-zA-Z0-9._]+@[a-zA-Z]+(\.[a-zA-Z]{2,})+$/
+            let ptn1 = /^[^\s]{1,16}$/
+            if(ptn1.test(txt)){
+                
+                document.getElementById("ans").innerHTML="done";
+            }
+            else{
+                document.getElementById("ans").innerHTML="wrong";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

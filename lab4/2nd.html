@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,14 +6,29 @@
     <title>Document</title>
     <style>
         .lstItm{
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
+            
+            
+            width: 750px;
+            height: 550px;
+            /* object-fit: cover; */
+        }
+        .base{
+            display: flex;
+            justify-content: center;
+        }
+        .main{
+            /* align-items: center; */
+            height: 500px;
+            width: 500px;
         }
     </style>
 </head>
 <body>
-    <div id="main"></div>
+    <div class="base">
+        <div class="pre" onclick="pre()">⏪</div>
+        <div id="main"></div>
+        <div class="next" onclick="next()">⏩</div>
+    </div>
     <script>
         let div = document.getElementById("main")
         let lst = [
@@ -23,14 +38,24 @@
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyFcvmHKM1inSOApmGcIYGT_XsE4KF9Pazuw&s",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbysMwkDE3ZSQUK4RrsS3yLDm5er2CmargYw&s"
         ]
-        // lst.forEach(e=>{
-        //     let box = document.createElement("div")
-        //     box.className = "lstItm"
-        //     box.innerHTML = `<img src="${e}" width="150"/>`
-        //     div.appendChild(box)
-        // })
         div.innerHTML = `<img src="${lst[0]}" class="lstItm" />`
-        div.addEventListener("")
+        let idx = 0
+        function pre(){
+            if(idx===0){
+                idx = lst.length-1
+            }else{
+                idx--
+            }
+            div.innerHTML = `<img src="${lst[idx]}" class="lstItm" />`
+        }
+        function next(){
+            if(idx===lst.length-1){
+                idx = 0
+            }else{
+                idx++
+            }
+            div.innerHTML = `<img src="${lst[idx]}" class="lstItm" />`
+        }
     </script>
 </body>
-</html> -->
+</html>

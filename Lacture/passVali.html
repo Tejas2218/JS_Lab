@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,17 +15,24 @@
         function button() {
             let txt = document.getElementById("pass").value;
             // let ptn1 = /^[a-zA-Z0-9._]+@[a-zA-Z]+(\.[a-zA-Z]{2,})+$/
-            let ptn1 = /^[^\s]{1,16}$/
-            if(ptn1.test(txt)){
-                
-                document.getElementById("ans").innerHTML="done";
+            let ptn1 = /^[a-z]+$/
+            let ptn2 = /^[a-zA-Z]+$/
+            let ptn3 = /^[^\s]+$/
+            if(!ptn1.test(txt)){
+                document.getElementById("ans").innerHTML="Mush have atleast 1 lowerCase";
             }
-            else{
-                document.getElementById("ans").innerHTML="wrong";
+            if(!ptn2.test(txt)){
+                document.getElementById("ans").innerHTML="Mush have atleast 1 UprCase";
+            }
+            if(!ptn3.test(txt)){
+                document.getElementById("ans").innerHTML="Mush have atleast 1 spcial character";
+            }
+            if(txt.length<8){
+                document.getElementById("ans").innerHTML="password mush have atlease 8 character long";
             }
         }
     </script>
 
 </body>
 
-</html>
+</html> -->

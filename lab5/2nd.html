@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="email" placeholder="emial">
+    <input type="text" id="pass" placeholder="pass">
+    <button type="button" onclick="button()">LOGIN</button><br><br>
+    <p id="msg">abc</p>
+
+    <script>
+
+
+        let msg = document.getElementById("msg")
+        function button() {
+            let email = document.getElementById("email").value
+            let pass = document.getElementById("pass").value
+            let ptn1 = /^[a-zA-Z0-9._]+@[a-zA-Z]+(\.[a-zA-Z]{2,})+$/
+            let ptn2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9\s])[^\s]{8,16}$/
+            if (!ptn1.test(email)) {
+                msg.innerText = "Invalid Email";
+                msg.style.color = "red";
+            }
+            else if (!ptn2.test(pass)) {
+                msg.innerText = "Invalid Password";
+                msg.style.color = "red";
+            }
+            else {
+                msg.innerText = "Login Success";
+                msg.style.color = "green";
+            }
+            // let ptn2 = /^$/
+        }
+    </script>
+</body>
+
+</html>

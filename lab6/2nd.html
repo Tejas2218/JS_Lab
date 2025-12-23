@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,9 +8,28 @@
 </head>
 
 <body>
-    <textarea id="txt"></textarea>
-    <p id="ch">0</p>/50 &nbsp;
-    <p id="r"></p>
+    <textarea id="txt" onkeyup="updt()" maxlength="100"></textarea><br>
+    <snap class="curentDiv">
+        curent: 
+        <span id="curent">0</span>
+    </span> &nbsp;&nbsp;
+    <span class="remaingDiv">
+        remaing: 
+        <span id="remaing">100</span>
+    </span>
+    <script>
+        let curent = document.getElementById("curent")
+        let remaing = document.getElementById("remaing")
+        let c = 0
+        let r = 100
+        function updt(){
+            if(c<100 && r>0){
+                c++
+            curent.innerText = c
+            r--
+            remaing.innerText = r
+            }
+        }
+    </script>
 </body>
-
-</html> -->
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            
+            display: flex;
+            position: relative;
+        }
+        .child{
+            height: 60px;
+            width: 60px;
+            margin: 5px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+    <script>
+        let div = document.getElementById("div")
+        let size = 50
+        let done = false
+        let stop = false
+        function start() {
+            stop = false
+            if (stop == false) {
+                let set = setInterval(() => {
+                    if(stop == true){
+                        clearInterval(set)
+                    }
+                    if (size <= 200 && done == false && stop == false) {
+                        size++
+                        div.style.height = size + "px"
+                        div.style.width = size + "px"
+                    } else {
+                        done = true
+                        if (size > 50) {
+                            size--
+                            div.style.height = size + "px"
+                            div.style.width = size + "px"
+                        }
+                    }
+                }, 50)
+            }
+        }
+        function stop1() {
+            stop = true
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div">
+        <h2>API DATA</h2>
+        <button id="btn" onclick="btn()">Load Data</button>
+        <p id="p"></p>
+    </div>
+    <script>
+        function btn(){
+            let p = fetch("https://jsonplaceholder.typicode.com/todos")
+            .then((res)=>{
+                return res.text()
+            }).then((data)=>{
+                let dt = JSON.parse(data)
+                console.log(dt[0])
+                for(i=0; i<10; i++){
+                    document.getElementById("p").innerHTML += `<hr>
+                    <h2>title: ${dt[i].title}</h2>
+                    <h3>completed: ${dt[i].completed}</h3><hr>`
+                }
+            })
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+"[{'key':value}]"
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,6 +10,12 @@
     #main {
         visibility: hidden;
     }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
 </style>
 
 <body>
@@ -36,27 +42,42 @@
             }).then((data) => {
                 const dt = JSON.parse(data)
                 document.getElementById("main").style.visibility = "visible"
+
                 for (i = 0; i < 20; i++) {
-                    if (e == (dt[i].name || dt[i].email) || e == "") {
-                        document.getElementById("tbl").innerHTML += `
-                    <tr>
-                        <td>${dt[i].name}</td>
-                        <td>${dt[i].email}</td>
+
+                    document.getElementById("tbl").innerHTML += `
+                    <tr id="${i}">
+                        <td class="name">${dt[i].name}</td>
+                        <td class="email">${dt[i].email}</td>
                         <td>${dt[i].city}</td>
                         <td>${dt[i].dob}</td>
                         <td>${dt[i].address}</td>
                     </tr>`
-                    }else{
-                        continue
-                    }
-
                 }
             })
         }
         function search1() {
-            let e = document.getElementById("s")
-            btn(e)
+            let searchText = document.getElementById("s").value.toLowerCase();
+            let names = document.getElementsByClassName("name");
+            let emails = document.getElementsByClassName("email");
+
+            for (let i = 0; i < names.length; i++) {
+
+                let nameText = names[i].textContent.toLowerCase();
+                let emailText = emails[i].textContent.toLowerCase();
+                let row = document.getElementById(i);
+
+                if (
+                    nameText.includes(searchText) ||
+                    emailText.includes(searchText)
+                ) {
+                    row.style.backgroundColor = "#ffeaa7"; 
+                } else {
+                    row.style.backgroundColor = ""; 
+                }
+            }
         }
+
     </script>
 </body>
 

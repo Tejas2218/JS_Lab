@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!---     https://wwtr.in/${city}?format=3     -->
+    <input type="text" id="city" placeholder="City"/>
+    <button onclick="btn()">Get</button>
+    <p id="p"></p>
+    <script>
+        function btn(){
+            let city = document.getElementById("city").value
+            fetch(`https://wttr.in/${city}?format=3`)
+            .then((res) => {
+                return res.text()
+            }).then((res) => {
+                document.getElementById("p").innerHTML = res
+            })
+
+        }
+    </script>
+</body>
+</html>

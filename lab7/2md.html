@@ -11,15 +11,19 @@
     <button onclick="btn()">Get</button>
     <p id="p"></p>
     <script>
-        const url = "./demo.json"
+        const url = "https://68b7e6eeb715405043265149.mockapi.io/student/userDetail"
         function btn() {
             fetch(url).then((res) => {
                 return res.text()
             }).then((data) => {
                 const dt = JSON.parse(data)
-                for (i = 0; i < 3; i++) {
+                for (i = 0; i < 20; i++) {
                     document.getElementById("p").innerHTML += `<hr>Name: ${dt[i].name} <br>
-                Age: ${dt[i].age}<hr>`
+                Email: ${dt[i].email} <br>
+                City: ${dt[i].city} <br>
+                DOB: ${dt[i].dob} <br>
+                Address: ${dt[i].address} <br>
+                <hr>`
                 }
             })
         }

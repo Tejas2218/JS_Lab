@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="shw">Show</button>
+    <p id="p">All students are: <br></p>
+    <script>
+        let arr = [
+            {
+                'name': "tejas",
+                'marks': 44
+            },
+            {
+                'name': "het",
+                'marks': 55
+            },
+            {
+                'name': "abc",
+                'marks': 33
+            },
+            {
+                'name': "pqr",
+                'marks': 25
+            }
+        ]
+        let arn = []
+        for (i = 0; i < arr.length; i++) {
+            document.getElementById("p").innerHTML += "<hr>" +
+                "name : " + arr[i].name + "<br>" +
+                "marks : " + arr[i].marks + "<br><hr>"
+        }
+        document.getElementById("shw").addEventListener("click", () => {
+            document.getElementById("p").innerHTML = ""
+            let arn = arr.filter(std => std.marks >= 35)
+            console.log(arn)
+            for (i = 0; i < arr.length; i++) {
+                document.getElementById("p").innerHTML += "<hr>" +
+                "name : " + arn[i].name + "<br>" +
+                "marks : " + arn[i].marks + "<br><hr>"
+
+            }
+        })
+    </script>
+</body>
+
+</html>

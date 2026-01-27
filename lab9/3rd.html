@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="p"></p>
+    <button id="shw">Show</button>
+    <script>
+        let arr = [20, 21, 19, 5, 29, 22, 21, 23, 10, 9]
+        let name = document.getElementById("p")
+        for (i = 0; i < arr.length; i++) {
+            document.getElementById("p").innerHTML += " | " + arr[i] + " | "
+        }
+        document.getElementById("shw").addEventListener("click", () => {
+            name.value = ""
+            let arn = arr.reduce((a, b) => (a + b) / 2)
+            document.getElementById("p").innerText = "AVG: " + arn.toFixed(2)
+        })
+    </script>
+</body>
+
+</html>

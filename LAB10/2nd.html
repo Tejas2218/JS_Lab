@@ -19,7 +19,7 @@
     let data = document.getElementById("data")
     function load(){
         for(i=0; i<arr.length; i++){
-        p.innerHTML += `<li> ${arr[i]} </li>`
+        p.innerHTML += `<li> ${arr[i]} </li> &nbsp <input type="checkbox" id="${i}">Done`
     }
     }
     document.getElementById("add").addEventListener("click", ()=>{

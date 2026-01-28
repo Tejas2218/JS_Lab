@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bgA {
+            background-color: red;
+        }
+        .bgB {
+            background-color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="1" class="bgB">
+        <input type="checkbox" name="" onclick="cl('1')"> &nbsp; HTML
+    </div>
+    <div id="2" class="bgB">
+        <input type="checkbox" name="" id="" onclick="cl('2')"> &nbsp; CSS
+    </div>
+    <div id="3" class="bgB">
+        <input type="checkbox" name="" id="" onclick="cl('3')"> &nbsp; JS
+    </div>
+    <div id="4" class="bgB">
+        <input type="checkbox" name="" id="" onclick="cl('4')"> &nbsp; NODE
+    </div>
+    <script>
+        function cl(e) {
+            
+            
+            let a = document.getElementById(e)
+            let bool = a.classList.contains("bgB")
+            console.log(bool);
+            if (bool){
+                a.classList.remove("bgB")
+                a.classList.add("bgA")
+            }
+            else{
+                a.classList.remove("bgA")
+                a.classList.add("bgB")
+            }
+        }
+    </script>
+</body>
+
+</html>

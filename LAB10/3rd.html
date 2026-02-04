@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,43 +8,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-</style>
 
 <body>
     <h2>TODO List</h2>
     <input type="text" id="data" placeholder="TODO Task">
     <button id="add">Add</button>
     <ul id="p"></ul>
-</body>
-<script>
-    let arr = []
-    let p = document.getElementById("p")
-    let data = document.getElementById("data")
-    function load() {
-        for (i = 0; i < arr.length; i++) {
-            p.innerHTML += `<li> ${arr[i]} </li> &nbsp 
-            <input type="checkbox" value="false" id="${i}" onclick = "check("${i}")">
+    <script>
+        let arr = []
+        let p = document.getElementById("p")
+        let data = document.getElementById("data")
+        function load() {
+            for (i = 0; i < arr.length; i++) {
+                p.innerHTML += `<li> ${localStorage.getItem[i]} </li> &nbsp 
+            <input type="checkbox" value="false" id="${i}" onclick = "check('${i}')">
             Done`
+            }
         }
-    }
 
-    document.getElementById("add").addEventListener("click", () => {
-        p.innerHTML = ""
-        arr.push(data.value)
-        load()
-        data.value = ""
-    })
-
-    let ul = document.querySelector("ul")
-    function check(e){
-        // console.log(document.getElementById(e).value);
-        
-        document.getElementById(e).value = true
-        // console.log(document.getElementById(e).value);
-    }
-    
-
-</script>
+        document.getElementById("add").addEventListener("click", () => {
+            p.innerHTML = ""
+            arr.push(data.value)
+            load()
+            data.value = ""
+            localStorage.setItem = arr
+            console.log(localStorage.setItem);
+            
+        })
+    </script>
+</body>
 
 </html>
